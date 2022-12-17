@@ -5,7 +5,7 @@
 #include <alloca.h>
 #include<string.h>
 
-int *resultic(int *a) {
+int* resultic(int *a) {
     int *res;
     res = calloc(sizeof(int), 3);
     for (int i = 1; i <= 10; i++) {
@@ -31,8 +31,10 @@ void practise_14() {
         printf("%3d", a[i]);
     }
     int *result;
+    int* (*resultics)(int *a);
+    resultics = resultic;
     result = malloc(sizeof(int) * 3);
-    result = resultic(a);
+    result = resultics(a);
     printf("\n+++++++RESULT+++++++\n");
     printf("Сумма элементов 3i: %d\nСумма элементов 3i+1: %d\nСумма элементов 3i+2: %d", result[0], result[1],
            result[2]);
